@@ -1,0 +1,37 @@
+@model AluguelDeCarros.Models.Carro
+
+@{
+    ViewData["Title"] = "Cadastrar Carro";
+}
+
+<h1 class="mb-4">➕ Cadastrar Novo Carro</h1>
+
+<form asp-action="Create" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="Modelo" class="form-label"></label>
+        <input asp-for="Modelo" class="form-control" />
+        <span asp-validation-for="Modelo" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Marca" class="form-label"></label>
+        <input asp-for="Marca" class="form-control" />
+        <span asp-validation-for="Marca" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Ano" class="form-label"></label>
+        <input asp-for="Ano" class="form-control" type="number" />
+        <span asp-validation-for="Ano" class="text-danger"></span>
+    </div>
+    <div class="col-md-4 d-flex align-items-center">
+        <input asp-for="Disponivel" class="form-check-input me-2" type="checkbox" />
+        <label asp-for="Disponivel" class="form-check-label"></label>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
